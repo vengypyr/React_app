@@ -1,27 +1,28 @@
+/*
+<div id="parent">
+   <div id="child1">
+      <h1> i am H1 tag </h1>
+      <h2> i am H2 tag </h2>
+   <div>
+   
+   <div id="child2">
+       <h1> i am H1 tag </h1>
+       <h2> i am H2 tag </h2>
+   <div>
+<div>
+*/
 
-/**
- * <div id="radha-raji">
- *    <div id="prakash-uma">
- *      <h1  id="pratima" > I'm Pratima</h1>
- *       <h2 id="akshara"> I'm Akshara</h2>
- *    </div>
- *   <div id="vengatesh-vimala">
- *      <h1 id="vinish"> I'm Vinish</h1>
- *    </div>
- * 
- * </div>
- * ReactElement(object) => HTML ELEMENT (Browser can understands)
- */
-const parent = React.createElement('div', {id:"radha-raji"}, [
-    (React.createElement('div', {id:'prakash-uma'}, [
-        (React.createElement('h1', {id:'pratima'}, 'I am Pratima')),
-        (React.createElement('h2', {id:'akshara'}, 'I am Akshara')),
-
-    ])),
-    (React.createElement('div', {id: 'vengatesh-vimala'},(React.createElement("h1", {id:'vinish'}, "I am vinish"))))
+const parent = React.createElement("div", { id: "parent" }, [
+    React.createElement("div", { id: "child1" }, [
+        React.createElement("h1", {}, "i am H1 tag"),
+        React.createElement("h1", {}, "i am H2 tag")
+    ]),
+    React.createElement("div", { id: "child2" }, [
+        React.createElement("h1", {}, "i am H1 tag"),
+        React.createElement("h2", {}, "i am H2 tag")
+    ])
 ])
 
-// const heading = React.createElement("h1", {"class": "header"}, "Hello world App");
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// const heading = React.createElement("h1", { id: "heading" }, "Hello Reacttt...!");
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(parent);
-console.log('taheadingg', parent)
